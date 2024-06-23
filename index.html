@@ -1174,6 +1174,13 @@
         <section class="contact-form">
 
           <h3 class="h3 form-title">Contact Form</h3>
+          <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function() {
+    emailjs.init("MFttWMHq5ph-HuHbc"); // Replace with your User ID
+  })();
+</script>
+
 
           <form action="#" class="form" data-form>
 
@@ -1191,6 +1198,34 @@
             </button>
 
           </form>
+          <script>
+            document.querySelector('.form').addEventListener('submit', function(event) {
+              event.preventDefault();
+            
+              // Collect the form data
+              let fullname = document.querySelector('input[name="fullname"]').value;
+              let email = document.querySelector('input[name="email"]').value;
+              let message = document.querySelector('textarea[name="message"]').value;
+            
+              // Create an email params object
+              let templateParams = {
+                name: fullname,
+                email: email,
+                message: message
+              };
+            
+              // Send the email using EmailJS
+              emailjs.send('service_2txokld', 'template_ejsssh5', templateParams)
+                .then(function(response) {
+                  console.log('SUCCESS!', response.status, response.text);
+                  alert("Your message has been sent successfully!");
+                }, function(error) {
+                  console.log('FAILED...', error);
+                  alert("There was an error sending your message. Please try again.");
+                });
+            });
+            </script>
+            
 
         </section>
 
