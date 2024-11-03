@@ -422,6 +422,13 @@ main {
   margin-bottom: 2px;
 }
 
+.btn-cv{
+  color: aliceblue;
+}
+.btn-cv:hover{
+  color: aqua;
+}
+
 .contact-info :is(.contact-link, time, address) {
   color: var(--white-2);
   font-size: var(--fs-7);
@@ -753,6 +760,11 @@ main {
   filter: grayscale(1);
   transition: var(--transition-1);
 }
+.img{
+  width: 120px;
+  max-width: 120px;
+
+}
 
 .clients-item img:hover { filter: grayscale(0); }
 
@@ -872,10 +884,12 @@ main {
         .skill-details {
           display: none;
           margin-top: 10px;
+          color: aliceblue;
           padding: 10px;
-          border: 1px solid #ddd;
+          border: 1px solid #000000;
+          box-shadow: #000000;
           border-radius: 5px;
-          background-color: #f9f9f9;
+          background-color: #000000;
       }
 
       .skills-item.active .skill-details {
@@ -932,6 +946,7 @@ main {
   pointer-events: all;
 }
 
+
 .select-item button {
   background: var(--eerie-black-2);
   color: var(--light-gray);
@@ -943,7 +958,7 @@ main {
   border-radius: 8px;
 }
 
-.select-item button:hover { --eerie-black-2: hsl(240, 2%, 20%); }
+.select-item button:hover { color:var(--orange-yellow-crayola); }
 
 .project-list {
   display: grid;
