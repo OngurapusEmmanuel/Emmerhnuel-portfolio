@@ -84,7 +84,7 @@ const filterFunc = function (selectedValue) {
 
     if (selectedValue === "all") {
       filterItems[i].classList.add("active");
-    } else if (selectedValue === filterItems[i].dataset.category) {
+    } else if (selectedValue === filterItems[i].dataset.category.toLowerCase()) {
       filterItems[i].classList.add("active");
     } else {
       filterItems[i].classList.remove("active");
@@ -160,7 +160,7 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
 // toggleSkills.js
 
-// Function to toggle the visibility of the skill details
+// Function to toggle the visibility of the skill details with smooth animation
 function toggleSkillDetails(event) {
   const skillItem = event.currentTarget;
   skillItem.classList.toggle('active');
@@ -170,6 +170,10 @@ function toggleSkillDetails(event) {
 document.addEventListener('DOMContentLoaded', function () {
   const skillItems = document.querySelectorAll('.skills-item');
   skillItems.forEach(item => {
+      item.style.cursor = 'pointer';
       item.addEventListener('click', toggleSkillDetails);
   });
+  
+  // Add smooth scroll behavior for the entire page
+  document.documentElement.style.scrollBehavior = 'smooth';
 });
