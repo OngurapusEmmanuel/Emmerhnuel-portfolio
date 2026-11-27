@@ -1,0 +1,104 @@
+/* The CV page. Colours and buttons come from style.css. */
+
+.cv-page { background: var(--mist); }
+
+.cv-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 4.5rem;
+}
+
+.cv-toolbar .button:disabled {
+  cursor: default;
+  opacity: 0.55;
+}
+
+.cv-main { padding: clamp(1rem, 4vw, 3rem) var(--gutter); }
+
+.cv-status {
+  max-width: 52rem;
+  margin: 0 auto 1.5rem;
+  text-align: center;
+}
+
+.cv-sheet {
+  max-width: 52rem;
+  margin-inline: auto;
+  padding: clamp(1.25rem, 6vw, 4rem);
+  background: var(--white);
+  box-shadow: 0 20px 50px -30px rgba(14, 26, 58, 0.45);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+
+.cv-sheet h1 {
+  margin-bottom: 0.75rem;
+  font-size: clamp(1.6rem, 5vw, 2.25rem);
+  font-stretch: 118%;
+  font-weight: 800;
+  text-align: center;
+}
+
+.cv-sheet h2 {
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--cobalt);
+  font-size: 1.125rem;
+  font-stretch: 112%;
+  font-weight: 750;
+}
+
+.cv-sheet h3 { font-size: 1rem; font-weight: 700; }
+
+.cv-contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.15rem 1.25rem;
+  color: var(--slate);
+  overflow-wrap: anywhere;
+}
+
+.cv-section { margin-top: 2rem; }
+
+.cv-section > p + p { margin-top: 0.5rem; }
+
+.cv-entry + .cv-entry { margin-top: 1.1rem; }
+
+.cv-entry-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0 1rem;
+}
+
+.cv-aside { color: var(--slate); font-size: 0.875rem; }
+
+.cv-meta { color: var(--cobalt); font-weight: 600; }
+
+.cv-entry .cv-contact { justify-content: flex-start; }
+
+.cv-sheet .cv-points {
+  margin-top: 0.35rem;
+  padding-left: 1.1rem;
+  list-style: disc;
+}
+
+.cv-note {
+  margin-top: 0.35rem;
+  color: var(--slate);
+  font-size: 0.8125rem;
+  font-style: italic;
+}
+
+@media print {
+  .site-header, .cv-status { display: none; }
+  .cv-page { background: var(--white); }
+  .cv-main { padding: 0; }
+  .cv-sheet { max-width: none; padding: 0; box-shadow: none; }
+  .cv-entry, .cv-sheet h2 { break-inside: avoid; }
+  .cv-sheet h2 { break-after: avoid; }
+}
