@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CV | Emmanuel Ongurapus</title>
+  <meta name="description" content="Curriculum vitae of Emmanuel Ongurapus, web developer and IT support in Nairobi.">
+  <meta name="theme-color" content="#1b3a9e">
+
+  <link rel="icon" href="./assets/images/logo.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/cv.css">
+</head>
+
+<body class="cv-page">
+
+  <header class="site-header">
+    <div class="wrap cv-toolbar">
+      <a class="home-link" href="./index.html">Back to portfolio</a>
+      <button class="button button-small" type="button" data-download disabled>Download CV</button>
+    </div>
+  </header>
+
+  <main class="cv-main">
+    <p class="cv-status" role="status" data-cv-status>Preparing the CV…</p>
+    <noscript><p class="cv-status">The CV is built from the portfolio with JavaScript. Turn JavaScript on to view and download it.</p></noscript>
+    <article class="cv-sheet" data-cv hidden></article>
+  </main>
+
+  <script src="./assets/js/vendor/jspdf.umd.min.js"></script>
+  <script src="./assets/js/cv.js"></script>
+</body>
+
+</html>
